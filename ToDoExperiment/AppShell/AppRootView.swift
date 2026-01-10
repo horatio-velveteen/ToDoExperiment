@@ -10,8 +10,13 @@ import SwiftUI
 struct AppRootView: View {
     var body: some View {
         NavigationStack {
-            let viewModel = TaskListViewModel()
-            TaskListView(viewModel: viewModel)
+            //This needs to call tabview
+            // TaskListView will be called in Tabview
+//            let viewModel = TaskListViewModel()
+//            TaskListView(viewModel: viewModel)
+            BottomNavigationView()
+                .navigationTitle("My Tasks")
+
         }
     }
 }
