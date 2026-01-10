@@ -7,6 +7,7 @@
 import SwiftUI
 
 struct TaskListView: View {
+    @ObservedObject var viewModel: TaskListViewModel
     var body: some View {
         VStack {
             Image(systemName: "globe")

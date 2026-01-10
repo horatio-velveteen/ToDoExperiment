@@ -10,7 +10,8 @@ import SwiftUI
 struct AppRootView: View {
     var body: some View {
         NavigationStack {
-            TaskListView()
+            var viewModel = TaskListViewModel()
+            TaskListView(viewModel: viewModel)
         }
     }
 }
