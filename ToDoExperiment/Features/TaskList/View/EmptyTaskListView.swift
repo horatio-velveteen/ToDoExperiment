@@ -1,7 +1,12 @@
-//
-//  EmptyTaskListView.swift
-//  ToDoExperiment
-//
-//  Created by Ronald Brown on 1/9/26.
-//
+import SwiftUI
 
+struct EmptyTaskListView: View {
+    var body: some View {
+        VStack{
+            Text(TaskListConstants.emptyTaskListTitle)
+                .padding(.bottom, 8)
+            Text(TaskListConstants.emptyTaskListSubtitle)
+        }
+
+    }
+}

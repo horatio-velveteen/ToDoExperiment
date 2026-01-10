@@ -1,21 +1,21 @@
-//
-//  TaskListView.swift
-//  ToDoExperiment
-//
-//  Created by Ronald Brown on 1/9/26.
-//
 import SwiftUI
 
 struct TaskListView: View {
     @ObservedObject var viewModel: TaskListViewModel
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, wworld!")
+        if $viewModel.taskList.isEmpty {
+            Spacer()
+            EmptyTaskListView()
+            Spacer()
+        } else {
+            VStack {
+                Image(systemName: "globe")
+                    .imageScale(.large)
+                    .foregroundStyle(.tint)
+                Text("Hello, wworld!")
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
