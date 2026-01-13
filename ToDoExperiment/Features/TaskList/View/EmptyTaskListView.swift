@@ -13,7 +13,6 @@ struct EmptyTaskListView: View {
                 }
             }
         }
-        .background(Color.green)
     }
     
     @ViewBuilder
