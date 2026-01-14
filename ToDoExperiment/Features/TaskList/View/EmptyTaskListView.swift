@@ -1,6 +1,7 @@
 import SwiftUI
-
+import Foundation
 struct EmptyTaskListView: View {
+    @ObservedObject var viewModel: EmptyTaskListViewModel
     var body: some View {
         ZStack {
             VStack {
@@ -43,6 +44,7 @@ struct EmptyTaskListView: View {
     @ViewBuilder
     var addButton: some View {
         Button {
+            viewModel.addTask(title: "Test")
         }label: {
             Image(TaskListConstants.addTaskListImage)
                 .resizable()

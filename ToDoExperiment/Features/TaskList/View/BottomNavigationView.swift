@@ -6,9 +6,10 @@
 //
 import SwiftUI
 struct BottomNavigationView: View {
+    @StateObject var viewModel: EmptyTaskListViewModel
     var body: some View {
         TabView {
-            EmptyTaskListView()
+            TaskListView(viewModel: viewModel)
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
@@ -18,7 +19,7 @@ struct BottomNavigationView: View {
                     Label("Two", systemImage: "person")
                 }
             // will be settings
-            Text("Settings")
+            EmptyView()
                 .tabItem {
                     Label("Three", systemImage: "person.crop.circle")
                 }

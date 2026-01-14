@@ -12,9 +12,8 @@ struct AppRootView: View {
         NavigationStack {
             //This needs to call tabview
             // TaskListView will be called in Tabview
-//            let viewModel = TaskListViewModel()
-//            TaskListView(viewModel: viewModel)
-            BottomNavigationView()
+            @StateObject var viewModel = EmptyTaskListViewModel()
+            BottomNavigationView(viewModel: viewModel)
                 .navigationTitle("My Tasks")
 
         }

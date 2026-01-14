@@ -1,8 +1,7 @@
 import SwiftUI
 import Foundation
 internal import Combine
-
-class TaskListViewModel: ObservableObject {
+class EmptyTaskListViewModel: ObservableObject {
     var taskTitle: String = "Hello, World!"
     var completionDate: Date = Date()
     @Published var taskList: [UserTask] = []
@@ -11,7 +10,7 @@ class TaskListViewModel: ObservableObject {
         guard let title else {
             return
         }
-        let newTask = UserTask(id: UUID(), title: title, isCompleted: false)
+        let newTask = UserTask(title: title, isCompleted: false)
         self.taskList.append(newTask)
     }
 }

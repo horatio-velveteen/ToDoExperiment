@@ -1,13 +1,20 @@
 import SwiftUI
+import Foundation
 
 struct TaskListView: View {
-    @ObservedObject var viewModel: TaskListViewModel
+    var viewModel: EmptyTaskListViewModel
+//    var taskListViewModel: TaskListViewModel
     var body: some View {
-        if $viewModel.taskList.isEmpty {
+        if viewModel.taskList.isEmpty {
             Spacer()
-            EmptyTaskListView()
+            EmptyTaskListView(viewModel: EmptyTaskListViewModel())
             Spacer()
         } else {
+            ForEach(viewModel.taskList, id: \.self) { task in
+                Text("task.taskTitle")
+//                TaskView(task: viewModel.taskTitle, date: viewModel.completionDate, buttonText: "", isCompleted: false)
+            }
+            
             VStack {
                 Image(systemName: "globe")
                     .imageScale(.large)
