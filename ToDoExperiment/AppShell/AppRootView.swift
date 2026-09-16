@@ -6,7 +6,7 @@
 //Starting Root View
 
 import SwiftUI
-
+import Foundation
 struct AppRootView: View {
     var body: some View {
         NavigationStack {
@@ -15,6 +15,16 @@ struct AppRootView: View {
             @StateObject var viewModel = EmptyTaskListViewModel()
             BottomNavigationView(viewModel: viewModel)
                 .navigationTitle("My Tasks")
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button(action: {
+                            
+                        }, label: {
+                            Image(systemName: "plus")
+                                .font(.largeTitle)
+                        })
+                    }
+                }
 
         }
     }

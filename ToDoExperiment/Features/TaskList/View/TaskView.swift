@@ -11,6 +11,7 @@ struct TaskView: View, Hashable {
             VStack {
                 Text(task)
             }
+            Spacer()
             Text(buttonText)
         }
     }

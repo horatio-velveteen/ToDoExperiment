@@ -44,7 +44,7 @@ struct EmptyTaskListView: View {
     @ViewBuilder
     var addButton: some View {
         Button {
-            viewModel.addTask(title: "Test")
+            viewModel.addTask(title: "EmptyTaskListView funtion")
         }label: {
             Image(TaskListConstants.addTaskListImage)
                 .resizable()
